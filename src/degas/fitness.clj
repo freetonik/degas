@@ -1,9 +1,26 @@
-(ns degas.fitness)
+(ns degas.fitness
+  (:require [clojure.string :as str]))
 
-(defn bitsum [gene]
+;; -------------------
+;; Simplest reductions
+
+(defn fitness-bitsum [ind]
   "Returns a sum of sequence."
-  (reduce + gene))
+  (reduce + ind))
 
-(defn fitness-sum [ind]
-  "Returns integer sum of all units in an individual."
-  (reduce + (map bitsum ind)))
+
+;; ---------
+;; Distances
+
+(defn fitness-matching-distance [ind goal]
+  (map-indexed
+   (fn [idx itm]
+     ;; todo
+     )
+   ind))
+
+(defn fitness-hamming-distance [ind goal]
+  (count (filter true? (map (partial reduce not=)
+                            (map vector (str/join "" ind) (str/join "" goal))))))
+
+;; (fitness-hamming-distance [1 1 1] [1 0 0])

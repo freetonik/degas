@@ -4,6 +4,9 @@
 ;;   "Applies crossover-fn to a and b."
 ;;   (crossover-fn a b args))
 
+;; -------------------------
+;; Simple customizable split
+
 (defn crossover-split [a b percent]
   (let [a-len (Math/ceil (* percent (count a)))
         b-len (- (count b) a-len)
@@ -22,3 +25,22 @@
 
 (defn crossover-25-75 [a b]
   (crossover-split a b 0.25))
+
+
+;; -----------
+;; Specialized
+
+(defn crossover-ordered [a b point length]
+  "Returns a vector constructed by placing a section of b at point, of given length and adding elements of a in order. e.g.: [0 1 2 3] [3 2 1 0] 1 2 -> [3 1 2 0] "
+  (let [subv   (subvec a point (+ point length))
+        bprime (filterv #(not (contains? (set subv) %)) b)]
+
+    (apply vector (concat
+                   (subvec bprime 0 point)
+                   subv
+                   (subvec bprime point)))))
+;; ----
+;; TODO
+;; (defn crossover-interleave [a b length])
+;; (defn crossover-2point-split [a b p1 p2])
+;; crossover with two children?
