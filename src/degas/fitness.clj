@@ -20,7 +20,6 @@
    ind))
 
 (defn fitness-hamming-distance [ind goal]
+  "Returns the hamming distance between ind and goal sequence."
   (count (filter true? (map (partial reduce not=)
                             (map vector (str/join "" ind) (str/join "" goal))))))
-
-;; (fitness-hamming-distance [1 1 1] [1 0 0])

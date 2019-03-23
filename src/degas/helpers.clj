@@ -1,6 +1,5 @@
 (ns degas.helpers)
 
-
 ;; -------------------
 ;; Vector manipulation
 
@@ -10,6 +9,14 @@
                  (subvec v 0 point)
                  subv
                  (subvec v (+ point (count subv))))))
+
+(defn swap [v i1 i2]
+  "Swaps two elements in a sequence."
+  (assoc v i2 (v i1) i1 (v i2)))
+
+(defn shift [v n]
+  (let [distance (mod n (count v))]
+    (concat (subvec v distance) (subvec v 0 distance))))
 
 
 ;; -------

@@ -30,8 +30,9 @@
 ;; -----------
 ;; Specialized
 
-(defn crossover-ordered [a b point length]
-  "Returns a vector constructed by placing a section of b at point, of given length and adding elements of a in order. e.g.: [0 1 2 3] [3 2 1 0] 1 2 -> [3 1 2 0] "
+(defn crossover-ordered
+  "Returns a vector constructed by placing a section of b at point, of given length and adding elements of a in order. e.g.: [0 1 2 3] [3 2 1 0] 1 2 -> [3 1 2 0]. Random point and length if not provided. "
+  ([a b point length]
   (let [subv   (subvec a point (+ point length))
         bprime (filterv #(not (contains? (set subv) %)) b)]
 
@@ -39,6 +40,12 @@
                    (subvec bprime 0 point)
                    subv
                    (subvec bprime point)))))
+  ([a b]
+  (let [
+        point (rand-int (count a))
+        length (rand-int (- (count a) point))]
+    (crossover-ordered a b point length))))
+
 ;; ----
 ;; TODO
 ;; (defn crossover-interleave [a b length])

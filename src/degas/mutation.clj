@@ -1,4 +1,5 @@
-(ns degas.mutation)
+(ns degas.mutation
+  (:require [degas.helpers :refer :all]))
 
 ;; --------------
 ;; Generic helper
@@ -28,16 +29,17 @@
 ;; --------
 ;; Swapping
 
-(defn swap [v i1 i2]
-  "Swaps two elements in a seq."
-   (assoc v i2 (v i1) i1 (v i2)))
-
 (defn mut-swap [ind]
   "Returns an individual with two random genes swapped."
   (let [a (rand-int (count ind))
         b (rand-int (count ind))]
     (swap ind a b)))
 
+;; --------
+;; Shifting
+
+(defn mut-shift [ind n]
+  (shift ind n))
 
 ;; -------
 ;; Inc/dec
@@ -55,3 +57,11 @@
 (defn mut-reverse-ind [ind]
   "Returns a reversed ind."
   (apply vector (reverse ind)))
+
+
+;; -------------------
+;; Population mutation
+
+(def mutate-pop [pop ratio]
+  ;; todo
+  )
