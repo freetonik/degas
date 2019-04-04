@@ -1,14 +1,9 @@
 # degas
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure library designed to run evolutionary computation in the browser.
+
+(degas – **d**ecentralized **e**volutionary (**g**enetic) **a**lgorithm **s**panned)
 
 ## Usage
 
 FIXME
-
-## License
-
-Copyright © 2019 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
