@@ -1,3 +1,5 @@
+[![Clojars Project](https://img.shields.io/clojars/v/degas.svg)](https://clojars.org/degas)
+
 # degas
 
 A Clojure library designed to run evolutionary computation in the browser.
