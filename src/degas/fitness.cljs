@@ -6,7 +6,6 @@
   "Returns a sum of sequence."
   (reduce + ind))
 
-
 ;; Distances
 (defn fitness-hamming-distance [ind goal]
   "Returns the hamming distance between ind and goal sequence."
