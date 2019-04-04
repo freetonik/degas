@@ -12,3 +12,4 @@ A Clojure library designed to run evolutionary computation in the browser. Prese
 - [ ] Move core.async from sample app into the framework
 - [ ] Switch to .cljc
 - [ ] Add specs to generator functions
+- [ ] Switch to Karma/Phantom or something similar for tests
