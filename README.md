@@ -2,7 +2,7 @@
 
 # degas
 
-A Clojure library designed to run evolutionary computation in the browser. Presentation and demo at [Dutch Clojure Days 2019](https://clojuredays.org/#Decentralized%20evolutionary%20computation%20with%20Clojure%20and%20ClojureScript).
+A Clojure library designed to run evolutionary computation in the browser. Presentation and demo at Dutch Clojure Days 2019 ([video](https://youtu.be/Uij-BvG_f58)).
 
 
 (degas – **d**ecentralized **e**volutionary (**g**enetic) **a**lgorithm **s**panned)
